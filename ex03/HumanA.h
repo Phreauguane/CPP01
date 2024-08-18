@@ -1,9 +1,15 @@
 #include "Weapon.h"
 
+#include <string>
+#include <iostream>
+
 class HumanA
 {
 private:
-	Weapon& weapon;
+	Weapon	 	*weapon;
+	std::string name;
 public:
-	// TO DO
+	HumanA(std::string, Weapon&);
+	~HumanA();
+	void attack();
 };
