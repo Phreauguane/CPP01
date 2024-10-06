@@ -50,8 +50,11 @@ int main(int ac, char **av)
 		return 0;
 	
 	std::string file(av[1]);
+	std::string of(file + ".replace");
 	std::string s1(av[2]);
 	std::string s2(av[3]);
 
-	std::cout << sed(readFile(file), s1, s2) << std::endl;
+	std::ofstream ofile(of.c_str());
+	ofile << sed(readFile(file), s1, s2);
+	ofile.close();
 }
